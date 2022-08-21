@@ -1,8 +1,11 @@
 package haqnawaz.org.a20220815db;
 
-public class StudentModel {
+import java.io.Serializable;
+
+public class StudentModel implements Serializable {
     private String name;
     private int rollNmber;
+    private int oldRollNumber;
     private boolean isEnroll;
 
     @Override
@@ -42,5 +45,13 @@ public class StudentModel {
 
     public void setEnroll(boolean enroll) {
         isEnroll = enroll;
+    }
+
+    public int getOldRollNumber() {
+        return oldRollNumber;
+    }
+
+    public void setOldRollNumber(int oldRollNumber) {
+        this.oldRollNumber = oldRollNumber;
     }
 }

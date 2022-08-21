@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work/Android/20220815DB/app/src/main/res/layout/activity_main.xml" value="0.75" />
+        <entry key="..\:/Work/Android/20220815DB/app/src/main/res/layout/activity_update_acitivity.xml" value="0.33" />
         <entry key="..\:/Work/Android/20220815DB/app/src/main/res/layout/custom_list_view_layout.xml" value="0.5" />
       </map>
     </option>

@@ -1,15 +1,15 @@
 package haqnawaz.org.a20220815db;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
+import android.os.Debug;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
@@ -29,12 +29,23 @@ public class CustomListView extends ArrayAdapter<StudentModel> {
                 .setText(String.valueOf(student.getRollNumber()));
 
         Button update_btn = singleElement.findViewById(R.id.student_update);
-        Button delete_btn = singleElement.findViewById(R.id.student_update);
+
+        update_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(parent.getContext(), UpdateActivity.class);
+                intent.putExtra("student", student);
+                parent.getContext().startActivity(intent);
+            }
+        });
+
+        Button delete_btn = singleElement.findViewById(R.id.student_delete);
         delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DBHelper dbHelper = new DBHelper(parent.getContext());
                 dbHelper.deleteStudent(student.getRollNumber());
+                parent.findViewById(R.id)
             }
         });
 
