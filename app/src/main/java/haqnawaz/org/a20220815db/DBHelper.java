@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(STUDENT_NAME, STUDENTModel.getName());
-        cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
+        cv.put(STUDENT_ROLL, STUDENTModel.getRollNumber());
         cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
         db.insert(STUDENT_TABLE, null, cv);
         db.close();
@@ -53,6 +53,11 @@ public class DBHelper extends SQLiteOpenHelper {
         //long insert =
         //if (insert == -1) { return false; }
         //else{return true;}
+    }
+
+    public void deleteStudent(int rollNumber) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("DELETE FROM " + STUDENT_TABLE + " WHERE " + STUDENT_ROLL + " = " + rollNumber);
     }
 
     public ArrayList<StudentModel> getAllStudents() {

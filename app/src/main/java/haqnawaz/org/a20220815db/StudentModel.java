@@ -28,7 +28,7 @@ public class StudentModel {
         this.name = name;
     }
 
-    public int getRollNmber() {
+    public int getRollNumber() {
         return rollNmber;
     }
 
