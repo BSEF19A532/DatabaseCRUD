@@ -27,6 +27,8 @@ public class CustomListView extends ArrayAdapter<StudentModel> {
                 .setText(student.getName());
         ((TextView) singleElement.findViewById(R.id.student_id))
                 .setText(String.valueOf(student.getRollNumber()));
+        ((TextView) singleElement.findViewById(R.id.enrolled))
+                .setText( student.isEnroll() ? "Enrolled" : "Not Enrolled" );
 
         Button update_btn = singleElement.findViewById(R.id.student_update);
 
@@ -45,7 +47,6 @@ public class CustomListView extends ArrayAdapter<StudentModel> {
             public void onClick(View view) {
                 DBHelper dbHelper = new DBHelper(parent.getContext());
                 dbHelper.deleteStudent(student.getRollNumber());
-                parent.findViewById(R.id)
             }
         });
 
